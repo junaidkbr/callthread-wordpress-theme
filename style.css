@@ -77,16 +77,6 @@ html {
 /**
  * Remove the margin in all browsers.
  */
-body {
-	font-family: VisueltProRegular;
-}
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
 @font-face {
 	font-family: VisueltProBold;
 	src: url(assets/fonts/VisueltPro-Bold.ttf);
@@ -101,6 +91,17 @@ body {
 	font-family: VisueltProRegular;
 	src: url(assets/fonts/VisueltPro-Regular.ttf);
 }
+
+body {
+	font-family: VisueltProRegular;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
 
 :root {
 	--color-primary: #37396D;
@@ -334,7 +335,6 @@ a {
 	 }
 }
 
-
 .hero-section .col-2 {
 	min-height: 1100px;
 	background-color: var(--color-secondary);
@@ -367,8 +367,8 @@ a {
 	font-family: VisueltProMedium;
 	font-size: 80px;
 	line-height: 100%;
+	font-weight: 500;
 }
-
 
 .hero-section__desc {
 	font-size: 21px;
@@ -446,6 +446,7 @@ a {
 	font-size: 60px;
 	line-height: 120%;
 	color: #2F3037;
+	font-weight: 400;
 }
 
 .section-desc {
@@ -515,12 +516,14 @@ a {
 	font-size: 20px;
 	line-height: 120%;
 	color: #2F3037;
+	font-weight: 400;
 }
 
 .card-wrapper__card p {
 	font-size: 16px;
 	line-height: 170%;
 	color: #535356;
+	font-weight: 400;
 }
 
 .card-wrapper__img {

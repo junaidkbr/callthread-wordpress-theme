@@ -157,12 +157,14 @@ a {
 	padding: 66px 80px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	position: absolute;
+	z-index: 200;
 }
 
 @media (max-width: 1320px) {
 	.navbar {
-		 padding-inline: 50px;
+		padding-inline: 50px;
 	}
 }
 
@@ -176,6 +178,14 @@ a {
 	font-size: 30px;
 	line-height: 38px;
 	color: var(--color-white);
+}
+
+.navbar-menu-open {
+	all: unset;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	display: none;
 }
 
 .btn {
@@ -251,7 +261,39 @@ a {
 
 @media (max-width: 998px) {
 	.navbar nav {
-	display: none;
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		background-color: white;
+		z-index: 2222;
+		padding: 20px;
+		transform: translateX(-100%);
+		transition: transform 0.3s;
+	}
+
+	.navbar nav.open {
+		transform: none;
+	}
+
+	.navbar-menu-open {
+		display: block;
+	}
+
+	.navbar a {
+		margin-bottom: 20px;
+	}
+
+	main.disable {
+		opacity: 0.3;
+	}
+
+	.btn--signin {
+		width: 100%;
+		text-align: center;
+		margin-top: auto;
 	}
 }
 

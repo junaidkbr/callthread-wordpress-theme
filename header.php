@@ -66,4 +66,6 @@
 			<a href="#" class="btn btn--signin btn--blue">Sign in</a>
 			<a href="#" class="btn">Become a Publisher</a>
 		</nav>
+
+		<button class="navbar-menu-open"><img src="<?php echo get_template_directory_uri() . '/assets/images/hamburger.png'; ?>" alt="" class="w-full"></button>
 	</header>

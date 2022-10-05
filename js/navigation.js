@@ -97,3 +97,18 @@
 		}
 	}
 }() );
+
+
+let hamburgerBtn = document.querySelector('.navbar-menu-open')
+let mobileMenu = document.querySelector('.navbar nav')
+let main = document.querySelector('main')
+
+hamburgerBtn?.addEventListener('click', ()=> {
+	mobileMenu.classList.toggle('open')
+	main.classList.add('disable')
+})
+
+main?.addEventListener('click', () => {
+	mobileMenu.classList.remove('open')
+	main.classList.remove('disable')
+})

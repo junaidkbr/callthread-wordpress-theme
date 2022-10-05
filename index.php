@@ -4,23 +4,21 @@
 	?>
 	<main id="primary" class="site-main">
 		<section class="hero-section">
-			 <div class="col col-1">
-				<div class="hero-section__content">
-					<h1 class="hero-section__heading">Lorem ipsum dolor sit amet, consectetur</h1>
-					<p class="hero-section__desc">We make it easy to buy, manage and measure calls to your businessall in one place.</p>
-					<div class="hero-section__button-group">
-						<a href="#" class="btn  btn--orange">Sign up</a>
-						<a href="#" class="btn btn--outlined-white">Become a Publisher</a>
-					</div>
+			<div class="col col-1">
+			<div class="hero-section__content">
+				<h1 class="hero-section__heading">Lorem ipsum dolor sit amet, consectetur</h1>
+				<p class="hero-section__desc">We make it easy to buy, manage and measure calls to your businessall in one place.</p>
+				<div class="hero-section__button-group">
+					<a href="#" class="btn btn--orange">Sign up</a>
+					<a href="#" class="btn btn--outlined-white">Become a Publisher</a>
 				</div>
-			 </div>
-			 <div class="col col-2">
-				<div class="hero-section__image">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/banner-main-img.svg'; ?>" alt="" class="w-full">
-					<!-- <img src="<?php echo get_template_directory_uri() . '/assets/images/column-2-img.svg'; ?>" alt="col-2-img" class="w-full image">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/column-2-img-part.svg'; ?>" class="image-part"> -->
-				</div>
-			 </div>
+			</div>
+			</div>
+			<div class="col col-2">
+			<div class="hero-section__image">
+				<img src="<?php echo get_template_directory_uri() . '/assets/images/banner-main-img.svg'; ?>" alt="" class="w-full">
+			</div>
+			</div>
 		</section>
 
 		<section class="learn-section">
@@ -57,7 +55,6 @@
 				</div>
 			</div>
 		</section>
-
 	</main><!-- #main -->
 </div>
 <?php

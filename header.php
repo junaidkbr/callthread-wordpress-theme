@@ -59,11 +59,11 @@
 	</header>#masthead -->
 
 	<header class="navbar">
-		<a href="#" class="navbar-brand">CallThread</a>
+		<a href="#" class="navbar-brand" title="logo">CallThread</a>
 		<nav>
-		<a href="#" class="mr-45">Features</a>
-		<a href="#" class="mr-45">Pricing</a>
-		<a href="#" class="btn btn--signin btn--blue">Sign in</a>
-		<a href="#" class="btn">Become a Publisher</a>
+			<a href="#" class="mr-45">Features</a>
+			<a href="#" class="mr-45">Pricing</a>
+			<a href="#" class="btn btn--signin btn--blue">Sign in</a>
+			<a href="#" class="btn">Become a Publisher</a>
 		</nav>
 	</header>

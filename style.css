@@ -125,6 +125,7 @@ a {
 	color: var(--color-black);
 }
 
+/* Global classes */
 .mr-45 {
 	margin-right: 45px;
 }
@@ -189,9 +190,9 @@ a {
 }
 
 .btn:hover {
-	 background-color: var(--color-primary);
-	 border-color: var(--color-primary);
-	 color: white;
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+	color: var(--color-white);
 }
 
 .btn--orange {
@@ -225,7 +226,7 @@ a {
 .btn--outlined-white:hover {
 	background: var(--color-white);
 	border-color: var(--color-white);
-	color: black;
+	color: var(--color-black);
 }
 
 .btn--signin {
@@ -249,9 +250,9 @@ a {
 }
 
 @media (max-width: 998px) {
-	 .navbar nav {
-		display: none;
-	 }
+	.navbar nav {
+	display: none;
+	}
 }
 
 .hero-section .col {
@@ -444,7 +445,7 @@ a {
 @media (max-width: 1024px) {
 	.value-section.pull-up {
 		margin-top: -290px;
-			padding-top: 290px;
+		padding-top: 290px;
 	}
 }
 

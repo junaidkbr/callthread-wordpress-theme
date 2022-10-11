@@ -8,7 +8,6 @@
  *
  * @package create-ape-theme
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -21,51 +20,30 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'create-ape-theme' ); ?></a>
+  <?php wp_body_open(); ?>
 
-		<!-- <header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$create_ape_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $create_ape_theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $create_ape_theme_description;?></p>
-			<?php endif; ?>
-		</div>
+  <div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'create-ape-theme' ); ?></a>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'create-ape-theme' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav> 
-	</header>#masthead -->
+    <header id="masthead" class="navbar">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-brand" rel="home"><?php bloginfo( 'name' ); ?></a>
 
-	<header class="navbar">
-		<a href="#" class="navbar-brand" title="logo">CallThread</a>
-		<nav>
-			<a href="#" class="mr-45">Features</a>
-			<a href="#" class="mr-45">Pricing</a>
-			<a href="#" class="btn btn--signin btn--blue">Sign in</a>
-			<a href="#" class="btn">Become a Publisher</a>
-		</nav>
+      <nav>
+        <a href="#" class="mr-45">Features</a>
+        <a href="#" class="mr-45">Pricing</a>
+        <a href="#" class="btn btn--signin btn--blue">Sign in</a>
+        <a href="#" class="btn">Become a Publisher</a>
+      </nav>
 
-		<button class="navbar-menu-open"><img src="<?php echo get_template_directory_uri() . '/assets/images/hamburger.png'; ?>" alt="" class="w-full"></button>
-	</header>
+      <!-- <?php
+        wp_nav_menu(
+          array(
+            'theme_location' => 'primary'
+          )
+        );
+      ?> -->
+
+      <button class="navbar-menu-open">
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/hamburger.png'; ?>" alt="<?php _e( 'Hamburger toggle', 'create-ape-theme' ) ?>" class="w-full">
+      </button>
+    </header>

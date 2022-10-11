@@ -150,6 +150,11 @@ function create_ape_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'create_ape_theme_scripts' );
 
 /**
+ * Plugin dependency class
+ */
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -160,15 +165,64 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
+ * Register the required plugins for this theme.
+ *
+ * In this example, we register five plugins:
+ * - one included with the TGMPA library
+ * - two from an external source, one from an arbitrary source, one from a GitHub repository
+ * - two from the .org repo, where one demonstrates the use of the `is_callable` argument
+ *
+ * The variables passed to the `tgmpa()` function should be:
+ * - an array of plugin arrays;
+ * - optionally a configuration array.
+ * If you are not changing anything in the configuration array, you can remove the array and remove the
+ * variable from the function call: `tgmpa( $plugins );`.
+ * In that case, the TGMPA default settings will be used.
+ *
+ * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
+ */
+function ca_register_required_plugins() {
+	/*
+	 * Array of plugin arrays. Required keys are name and slug.
+	 * If the source is NOT from the .org repo, then source is also required.
+	 */
+	$plugins = array(
+		array(
+			'name'                => 'Advanced Custom Fields PRO',
+			'slug'                => 'advanced-custom-fields-pro',
+      'source'             => get_stylesheet_directory() . '/inc/plugins/advanced-custom-fields-pro.zip',
+      'required'            => true,
+			'force_activation'    => true
+		),
+	);
+
+	$config = array(
+		'id'           => 'fga',
+		'default_path' => '',
+		'menu'         => 'tgmpa-install-plugins',
+		'parent_slug'  => 'themes.php',
+		'capability'   => 'edit_theme_options',
+		'has_notices'  => true,
+		'dismissable'  => true,
+		'dismiss_msg'  => '',
+		'is_automatic' => false,
+		'message'      => '',
+	);
+
+	tgmpa( $plugins, $config );
+}
+add_action( 'tgmpa_register', 'ca_register_required_plugins' );
+
+/**
  * Changes ACF Save-JSON directory
  *
  * @param  String $path Default ACF JSON directory
  * @return String Modified ACF JSON directory path
  */
-function fga_acf_json_save_directory( $path ) {
+function ca_acf_json_save_directory( $path ) {
 	return get_stylesheet_directory() . '/acf-json';
 }
-add_filter( 'acf/settings/save_json', 'fga_acf_json_save_directory' );
+add_filter( 'acf/settings/save_json', 'ca_acf_json_save_directory' );
 
 /**
  * Changes ACF Load-JSON Directory
@@ -176,10 +230,10 @@ add_filter( 'acf/settings/save_json', 'fga_acf_json_save_directory' );
  * @param Array $paths ACF JSON directory paths
  * @return String Modified ACF JSON directory paths
  */
-function fga_acf_json_load_directory( $paths ) {
+function ca_acf_json_load_directory( $paths ) {
 	unset( $paths[0] );
 	$paths[] = get_stylesheet_directory() . '/acf-json';
 
 	return $paths;
 }
-add_filter('acf/settings/load_json', 'fga_acf_json_load_directory');
+add_filter('acf/settings/load_json', 'ca_acf_json_load_directory');

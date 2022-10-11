@@ -1,23 +1,5 @@
 <?php get_header(); ?>
 
-		<section class="hero-section">
-			<div class="col col-1">
-				<div class="hero-section__content">
-					<h1 class="hero-section__heading">Lorem ipsum dolor sit amet, consectetur</h1>
-					<p class="hero-section__desc">We make it easy to buy, manage and measure calls to your businessall in one place.</p>
-					<div class="hero-section__button-group">
-						<a href="#" class="btn btn--orange">Sign up</a>
-						<a href="#" class="btn btn--outlined-white">Become a Publisher</a>
-					</div>
-				</div>
-			</div>
-			<div class="col col-2">
-				<div class="hero-section__image">
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/banner-main-img.svg'; ?>" alt="hamburger-icon" class="w-full">
-				</div>
-			</div>
-		</section>
-
 		<section class="learn-section">
 			<div class="learn-section__container">
 				<h2 class="section-title">Buy calls and generate new leads</h2>

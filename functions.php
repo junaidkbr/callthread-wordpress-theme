@@ -49,7 +49,7 @@ function create_ape_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'create-ape-theme' ),
+			'primary' => esc_html__( 'Primary', 'create-ape-theme' ),
 		)
 	);
 
@@ -176,3 +176,27 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Changes ACF Save-JSON directory
+ *
+ * @param  String $path Default ACF JSON directory
+ * @return String Modified ACF JSON directory path
+ */
+function fga_acf_json_save_directory( $path ) {
+	return get_stylesheet_directory() . '/acf-json';
+}
+add_filter( 'acf/settings/save_json', 'fga_acf_json_save_directory' );
+
+/**
+ * Changes ACF Load-JSON Directory
+ *
+ * @param Array $paths ACF JSON directory paths
+ * @return String Modified ACF JSON directory paths
+ */
+function fga_acf_json_load_directory( $paths ) {
+	unset( $paths[0] );
+	$paths[] = get_stylesheet_directory() . '/acf-json';
+
+	return $paths;
+}
+add_filter('acf/settings/load_json', 'fga_acf_json_load_directory');

@@ -22,7 +22,7 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
 
-  <div id="page" class="site">
+  <div id="page" class="site container-fluid">
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'create-ape-theme' ); ?></a>
 
     <header id="masthead" class="navbar">
@@ -47,3 +47,5 @@
         <img src="<?php echo get_template_directory_uri() . '/assets/images/hamburger.png'; ?>" alt="<?php _e( 'Hamburger toggle', 'create-ape-theme' ) ?>" class="w-full">
       </button>
     </header>
+
+    <main id="primary" class="site-main">

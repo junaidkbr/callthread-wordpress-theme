@@ -1,8 +1,5 @@
-<div class="container-fluid">
-	<?php
-   get_header();
-	?>
-	<main id="primary" class="site-main">
+<?php get_header(); ?>
+
 		<section class="hero-section">
 			<div class="col col-1">
 				<div class="hero-section__content">
@@ -55,7 +52,5 @@
 				</div>
 			</div>
 		</section>
-	</main><!-- #main -->
-</div>
-<?php
-get_footer();
+
+<?php get_footer(); ?>

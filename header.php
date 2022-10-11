@@ -47,5 +47,3 @@
         <img src="<?php echo get_template_directory_uri() . '/assets/images/hamburger.png'; ?>" alt="<?php _e( 'Hamburger toggle', 'create-ape-theme' ) ?>" class="w-full">
       </button>
     </header>
-
-    <main id="primary" class="site-main">

@@ -1,6 +1,6 @@
 <?php
 $section_class = [
-  'value-section',
+  'icon-blocks',
   'layout-' . get_query_var( 'layout_index' ),
   get_sub_field( 'section_classes' ),
   get_sub_field( 'pull_section' ) ? 'pull-up' : '',

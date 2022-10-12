@@ -1,19 +1,19 @@
 <?php
 $section_class = [
-  'hero-section',
+  'hero',
   'layout-' . get_query_var( 'layout_index' ),
   get_sub_field( 'section_classes' ),
 ];
 ?>
 <section <?php ca_section_id(); ?> class="<?php echo trim( implode( ' ', $section_class ) ); ?>">
   <div class="col col-1">
-    <div class="hero-section__content">
+    <div class="hero__content">
       <?php
-        ca_the_field( 'heading', '<h1 class="hero-section__heading">', '</h1>', true );
-        ca_the_field( 'description', '<p class="hero-section__desc">', '</p>', true );
+        ca_the_field( 'heading', '<h1 class="hero__heading">', '</h1>', true );
+        ca_the_field( 'description', '<p class="hero__desc">', '</p>', true );
 
         if ( have_rows( 'buttons' ) ) {
-          echo '<div class="hero-section__button-group">';
+          echo '<div class="hero__button-group">';
 
           while ( have_rows( 'buttons' ) ) {
             the_row();
@@ -32,7 +32,7 @@ $section_class = [
         $image_src = wp_get_attachment_image_url( $image_id, 'full' );
         $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', TRUE ) ?? get_sub_field( 'heading' );
     ?>
-      <div class="hero-section__image">
+      <div class="hero__image">
         <img src="<?php echo $image_src; ?>" alt="<?php echo $image_alt; ?>" class="w-full">
       </div>
     <?php endif; ?>

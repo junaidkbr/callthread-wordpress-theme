@@ -28,22 +28,15 @@
     <header id="masthead" class="navbar">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-brand" rel="home"><?php bloginfo( 'name' ); ?></a>
 
-      <nav>
-        <a href="#" class="mr-45">Features</a>
-        <a href="#" class="mr-45">Pricing</a>
-        <a href="#" class="btn btn--signin btn--blue">Sign in</a>
-        <a href="#" class="btn">Become a Publisher</a>
-      </nav>
+      <nav id="site-navigation" class="main-navigation">
+        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'create-ape-theme' ); ?></button>
 
-      <!-- <?php
-        wp_nav_menu(
-          array(
-            'theme_location' => 'primary'
-          )
-        );
-      ?> -->
-
-      <button class="navbar-menu-open">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/hamburger.png'; ?>" alt="<?php _e( 'Hamburger toggle', 'create-ape-theme' ) ?>" class="w-full">
-      </button>
+        <?php
+          wp_nav_menu(
+            array(
+              'theme_location' => 'primary',
+            )
+          );
+        ?>
+      </nav><!-- #site-navigation -->
     </header>
